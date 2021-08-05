@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="header animated fadeIn">
+		<nav>
+			<h1>One Piece gallery</h1>
+		</nav>
+
+	</div>
+
+	<div id = "wrapper" >
+		<div class= "container" id="class1"> <img src="images/1.jpg"></div>
+		<div class= "container"> <img src="images/2.jpg"></div>
+		<div class= "container"> <img src="images/3.jpg"></div>
+		<div class= "container"> <img src="images/4.jpg"></div>
+		<div class= "container"> <img src="images/5.jpg"></div>
+		<div class= "container"> <img src="images/6.jpg"></div>
+		<div class= "container"> <img src="images/7.jpg"></div>
+	</div>
+
+	
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+	  	<div><span class="close">&times;</span></div>
+	    <div class = "modal-content"><img id ="picModal" src =""></div>
+	</div>
+	<script>
+		var modal = document.getElementById("myModal");
+		var span = document.getElementsByClassName("close")[0];
+		var picModal = document.getElementById("picModal");
+       	var pics = Array.from(document.getElementsByClassName("container"));
+
+       	
+       	pics.forEach(container => {
+    		container.onclick=  (e) => {
+        		modal.style.display = "block";
+        		picModal.src = e.target.src;
+    		};
+		});
+
+		span.onclick = function() {
+ 			modal.style.display = "none";
+		}
+
+	</script>
+
+
+</body>
+</html>
